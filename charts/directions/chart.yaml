@@ -1,4 +1,4 @@
 apiVersion: v1
-description: Direction chart
-name: direction
+description: Directions chart
+name: directions
 version: 1.0.0

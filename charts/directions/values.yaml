@@ -1,5 +1,5 @@
 service:
-  name: direction
+  name: directions
 
 resources:
   limits:
@@ -10,9 +10,11 @@ resources:
     memory: "128Mi"
 
 env:
-  RABBIT_URL: rabbitmq.default.svc.cluster.local
-  RABBIT_USER: user
-  RABBIT_PASS: ""
-  DB_USER: root
-  DB_PASS: YUfdayzwlx
-  DB_URL: mongodb.default.svc.cluster.local
+  - name: RABBIT_URL
+    value: rabbitmq.default.svc.cluster.local
+  - name: RABBIT_USER
+    value: user
+  - name: RABBIT_PASS
+    value: BLzIj3qDTj
+  - name: version
+    value: "1.0.2"

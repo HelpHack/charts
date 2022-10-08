@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Auth chart
+name: auth
+version: 1.0.0

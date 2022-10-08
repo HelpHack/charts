@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Search chart
+name: search
+version: 1.0.0

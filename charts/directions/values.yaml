@@ -1,0 +1,18 @@
+service:
+  name: direction
+
+resources:
+  limits:
+    cpu: "0.1"
+    memory: "128Mi"
+  requests:
+    cpu: "0.1"
+    memory: "128Mi"
+
+env:
+  RABBIT_URL: rabbitmq.default.svc.cluster.local
+  RABBIT_USER: user
+  RABBIT_PASS: ""
+  DB_USER: root
+  DB_PASS: YUfdayzwlx
+  DB_URL: mongodb.default.svc.cluster.local

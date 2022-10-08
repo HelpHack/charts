@@ -1,5 +1,6 @@
 service:
-  name: proxy
+  name: dbproxy
+  version: "1.0.0"
 
 resources:
   limits:
@@ -10,9 +11,17 @@ resources:
     memory: "128Mi"
 
 env:
-  RABBIT_URL: rabbitmq.default.svc.cluster.local
-  RABBIT_USER: user
-  RABBIT_PASS: ""
-  DB_USER: root
-  DB_PASS: YUfdayzwlx
-  DB_URL: mongodb.default.svc.cluster.local
+  - name: RABBITMQ_URL
+    value: "rabbitmq.default.svc.cluster.local"
+  - name: RABBITMQ_USER
+    value: user
+  - name: RABBITMQ_PASS
+    value: BLzIj3qDTj
+  - name: DB_USERNAME
+    value: root
+  - name: DB_PASSWORD
+    value: YUfdayzwlx
+  - name: DB_HOST
+    value: "mongodb.default.svc.cluster.local"
+  - name: version
+    value: "1.0.3"

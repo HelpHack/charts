@@ -6,6 +6,9 @@ metadata:
     release: "{{ .Release.Name }}"
   name: "{{ .Release.Name }}"
 spec:
+  selector:
+    matchLabels:
+      app: "{{ .Chart.Name }}"
   strategy:
     rollingUpdate:
       maxUnavailable: '25%'
@@ -23,23 +26,8 @@ spec:
       containers:
       - env:
 {{ toYaml .Values.env | indent 8 }}
-        image: "public.ecr.aws/y8l5h6t0/helphack/{{ .Chart.Name }}:latest"
-        {{ if .Values.image.pullSecret }}
-        imagePullSecrets:
-          - name: {{ .Values.image.pullSecret }}
-        {{ end }}
+        image: "public.ecr.aws/y8l5h6t0/{{ .Chart.Name }}:latest"
         name: "{{ .Chart.Name }}"
         ports:
         - containerPort: 8080
-        livenessProbe:
-          initialDelaySeconds: 60
-          httpGet:
-            path: /healthz
-            port: 8080
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-        resources:
-{{ toYaml .Values.resources | indent 10 }}
       restartPolicy: Always

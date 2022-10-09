@@ -10,13 +10,13 @@ resources:
     memory: "128Mi"
 
 env:
-  - name: RABBIT_URL
-    value: "rabbitmq.default.svc.cluster.local"
-  - name: RABBIT_USER
-    value: user
-  - name: RABBIT_PASS
-    value: BLzIj3qDTj
+  - name: DB_USERNAME
+    value: root
+  - name: DB_PASSWORD
+    value: YUfdayzwlx
+  - name: DB_HOST
+    value: "mongodb.default.svc.cluster.local"
   - name: PORT
     value: "8080"
   - name: version
-    value: "1.0.1"
+    value: "1.0.2"
